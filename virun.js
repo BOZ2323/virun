@@ -21,11 +21,27 @@ timer = setInterval(function animate() {
 		var t = Date.now() - clickTime;		
 		vy = ay * t;
 	}
+	//if ( y > document.body.clientHeight && x > document.body.clientWidth) {
+	//	console.log("hello");
+	//	startTime = Date.now();
+	//}
+	if (y > screen.height){
+		console.log("hello");
+		startTime = Date.now();
+		vy = 0;
+		ay = 0;
+	}
+	//if ( y > document.body.clientHeight && x > document.body.clientWidth) {
+	//	console.log("second if");
+	//	vy = 0;
+	//	ay = 0;
+//}
 },20); // ms  | 1000/20 = 50 frames per second (50 fps)
 
 virus.addEventListener("click", function onclick(event) {
 	ay = .001;
 	clickTime = Date.now();
+
 });
 
 
