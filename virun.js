@@ -23,6 +23,7 @@ function animate() {
 	if ( x > document.body.clientWidth) {
         // if our timer will trigger the restart in the future,
         // we do nothing here and just wait for the timer to fire.
+        console.log("end of screen");
         if (!restartTimer) {
             startTime = Date.now();
         }
