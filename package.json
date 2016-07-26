@@ -4,7 +4,7 @@
   "description": "",
   "main": "virun.js",
   "scripts": {
-    "start": "xdg-open virun.html",
+    "start": "open virun.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
