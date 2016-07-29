@@ -1,11 +1,12 @@
 function fly(
+    altitude,
+    horizontalVelocity, 
     verticalCrashAcceleration,
     delayAfterCrash, 
-    vx, 
-    altitude,
-    millisecondsBetweenFrames
+    millisecondsBetweenFrames,
+    cssSelector
 ) {
-    var virus = document.querySelector("div");
+    var virus = document.querySelector(cssSelector);
     
     var x;
     var y;
@@ -19,7 +20,7 @@ function fly(
 
     function animate() {
         var t = Date.now() - startTime;
-        x = vx * t;
+        x = horizontalVelocity * t;
         y = vy * t + altitude;
 
         virus.style.left = x + "px";
@@ -69,9 +70,19 @@ function fly(
 }
 
 fly(
+    400,    // altitude (in px from top)
+    0.1,    // horizontal velocity in pixels per milliseconds
     0.001,  // vertical accelertion after crash    
     1000,   // delayAfterCrash, 
-    0.1,    // horizontal velocity in pixels per milliseconds
-    400,    // altitude (in px from top)
-    20      // ms  | 1000/20 = 50 frames per second (frame rate = 50 fps)
+    20,      // ms  | 1000/20 = 50 frames per second (frame rate = 50 fps)
+    "#ufo1" // CSS Selector
+);
+
+fly(
+    200,    // altitude (in px from top)
+    0.2,    // horizontal velocity in pixels per milliseconds
+    0.001,  // vertical accelertion after crash    
+    2000,   // delayAfterCrash, 
+    20,      // ms  | 1000/20 = 50 frames per second (frame rate = 50 fps)
+    "#ufo2" // CSS Selector
 );
